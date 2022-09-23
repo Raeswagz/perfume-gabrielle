@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{ background-color: hsl(30, 38%, 92%); font-size: 14px;}
+    .container{ background-color: white; border-radius: 8px; }
+    .perfume{  font-family: Montserrat; color: hsl(228, 12%, 48%);}
+    h2{ font-family: Fraunces; color: hsl(212, 21%, 14%);}
+    .btn{ background-color: hsl(158, 36%, 37%); font-family: Montserrat; color: white; cursor: pointer;}  
+    .btn:active {background-color: hsl(212, 21%, 14%);}  
+    .message{  font-family: Montserrat; font-size:0.63rem; color: hsl(228, 12%, 48%);}
+    .price{ color: hsl(158, 36%, 37%) ; font-family: Fraunces; }
+    .old-price{  font-family: Montserrat; color: hsl(228, 12%, 48%);}
+    .attribution { font-size: .6875rem; text-align: center; margin-top: 10px; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+ /*****mobile*****/
+    @media (max-width: 480px) {
+      .container{ height: 440px; width: 250px; margin: auto; }
+      .image{ height: 175px; width: 250px; background: url("./images/image-product-mobile.jpg") no-repeat; background-size: 100% 100%; border-top-left-radius: 8px; border-top-right-radius: 8px; }
+      .info{ margin-left: 20px; margin-right: 20px;}
+      .perfume{ margin-top: 10px; margin-bottom: 5px; letter-spacing: 3px; font-size: 0.58rem; font-family: Montserrat; color: hsl(228, 12%, 48%);}
+       h2{margin-top: 0; margin-bottom: 0; font-size: 1.4rem; font-family: Fraunces; color: hsl(212, 21%, 14%);}
+       .btn{ background-color: hsl(158, 36%, 37%); font-family: Montserrat; font-size: 0.68rem; border: none; width: 100%; height: 35px; border-radius: 5px; color: white;}      
+       i{ margin-right: 7px;}
+      .message{  font-family: Montserrat; font-size:0.63rem; color: hsl(228, 12%, 48%); margin-bottom: 0; margin-top: 10px; line-height: 1.1rem;}
+      .price-holder{ display: flex; height: 50px; margin-bottom: 0; margin-top: 0;}
+      .price{ color: hsl(158, 36%, 37%) ; font-family: Fraunces; font-size: 1.28rem;  }
+      .price h3{ margin-bottom: 20px; margin-top: 10px;}
+      .old-price{ margin-left: 10px; margin-top: 20px; font-family: Montserrat; color: hsl(228, 12%, 48%); font-size: .6rem;}
+  }
+    /*****desktop*****/
+    @media (min-width: 481px){
+      body{ display: grid; place-items: center;}
+      .container{display: grid; height: 263px; width: 350px; grid-template-columns: 1fr 1fr; margin-top: 100px;}
+      .image{ height: 263px; width: 175px; background: url("./images/image-product-desktop.jpg") no-repeat; background-size: 100% 100%;  border-top-left-radius: 8px; border-bottom-left-radius: 8px;}
+      .info{ margin-left: 20px; margin-right: 20px; max-width: 140px;}
+      .perfume{ margin-top: 20px; margin-bottom: 10px; letter-spacing: 3px; font-size: 0.5rem; font-family: Montserrat; color: hsl(228, 12%, 48%);}
+      h2{margin-top: 0; margin-bottom: 0; line-height: 1.15rem; font-size: 1.2rem; font-family: Fraunces; color: hsl(212, 21%, 14%);}
+      .btn{  font-size: 0.58rem; border: none; width: 100%; height: 30px; border-radius: 5px; color: white;}      
+      i{ margin-right: 7px;}
+      .message{  font-family: Montserrat; font-size:0.5rem; color: hsl(228, 12%, 48%); margin-bottom: 0; margin-top: 15px; line-height: 0.9rem;}
+      .price-holder{ display: flex; height: 50px; margin-bottom: 0; margin-top: 1px;}
+      .price{ color: hsl(158, 36%, 37%) ; font-family: Fraunces; font-size: 1rem;  }
+      .price h3{ margin-bottom: 20px; margin-top: 10px;}
+      .old-price{ margin-left: 10px; margin-top: 16px; font-family: Montserrat; color: hsl(228, 12%, 48%); font-size: .5rem;}
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <article class="image"></article>
+   <div class="info">
+   <p class="perfume">PERFUME</p>
+
+  <h2>Gabrielle Essence Eau De Parfum</h2>
+
+  <p class="message">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+  Perfumer-Creator for the House of CHANEL.</p>
+
+  <div class="price-holder"><span class="price"><h3>$149.99</h3></span><span class="old-price"><del>$169.99</del></span></div>
+  
+
+  <button class="btn"><i class="bi bi-cart3"></i>Add to Cart</button>
+</div>
+</main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Innocent Abugu</a>.
+  </footer>
+</body>
+</html>
